@@ -10,6 +10,7 @@ public class drive extends OpMode
 {   
     float lsx;
     float rt;
+    float lt;
     
     float triggerThreshold;
     
@@ -37,13 +38,19 @@ public class drive extends OpMode
         // Update gamepad variables
         lsx = gamepad1.left_stick_x;
         rt = gamepad1.right_trigger;
+        lt = gamepad1.left_trigger;
         
         lpwr = 0;
         rpwr = 0;
         
         if (rt > triggerThreshold) {
-            lpwr += motorPower;
+            lpwr -= motorPower;
             rpwr += motorPower;
+        }
+        
+        if (lt > triggerThreshold) {
+            lpwr += motorPower;
+            rpwr -= motorPower;
         }
         
         if (lsx > 0) {

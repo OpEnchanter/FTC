@@ -1,2 +1,2 @@
 # FTC
-First Tech Challenge Resources
+FIRST Tech Challenge robotics league OnBot Java scripts.
